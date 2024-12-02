@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                sh 'git config --global http.sslVerify false'
                 git branch: 'main', url: 'https://github.com/malmetl/qa_genome.git'
             }
         }
